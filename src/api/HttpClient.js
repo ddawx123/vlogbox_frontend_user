@@ -1,7 +1,7 @@
 import axios from 'axios'
 axios.defaults.timeout = 5000
 console.log(process)
-axios.defaults.baseURL = 'http://10.44.100.1:8000/api'
+axios.defaults.baseURL = process.env.API_ENDPOINT
 
 axios.interceptors.request.use(function (config) {
   let token = localStorage.getItem('Authorization')
