@@ -22,7 +22,7 @@ axios.interceptors.response.use(function (res) {
   return Promise.reject(error)
 })
 
-export function get (url, query) {
+export function get (url, query = {}) {
   return new Promise(function (resolve, reject) {
     axios.get(url, {
       params: query
@@ -36,7 +36,7 @@ export function get (url, query) {
   })
 }
 
-export function post (url, params) {
+export function post (url, params = {}) {
   return new Promise(function (resolve, reject) {
     axios.post(url, params).then(function (res) {
       resolve(res)
